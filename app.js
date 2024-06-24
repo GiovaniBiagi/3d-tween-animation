@@ -6,6 +6,7 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 
 import { TWEEN } from "three/addons/libs/tween.module.min.js";
 
+const loadingState = document.getElementById("loading-state");
 let canvas = document.getElementById("dCanvas");
 let width = canvas.offsetWidth;
 let height = canvas.offsetHeight;
@@ -20,10 +21,17 @@ let controls;
 
 let loader = new GLTFLoader();
 
-loader.load("assets/scene.gltf", function (gltf) {
-  object = gltf.scene;
-  scene.add(object);
-});
+loader.load(
+  "assets/scene.gltf",
+  function (gltf) {
+    loadingState.innerHTML = "";
+    object = gltf.scene;
+    scene.add(object);
+  },
+  () => {
+    loadingState.innerHTML = "Loading model...";
+  }
+);
 
 let renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize(width, height);
