@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Work</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="slider">
+        <button id="btn1">Rotate X</button>
+        <button id="btn2">Rotate Y</button>
+        <button id="btn3">Rotate Z</button>
+        <button id="btn4">Scale</button>
+        <button id="btn6">Reset</button>
+        <div id="dCanvas">
+
+        </div>
+    </div>
+    <script type="importmap">
+    {
+        "imports": {
+                "three": "https://unpkg.com/three@0.148.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.148.0/examples/jsm/"
+        }
+    }
+</script>
+    <script src="./app.js" type="module"></script>
+</body>
+
+</html>
