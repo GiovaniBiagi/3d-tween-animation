@@ -33,7 +33,11 @@ loader.load(
   }
 );
 
-let renderer = new THREE.WebGLRenderer({ alpha: true });
+
+// const axesHelper = new THREE.AxesHelper(5);
+// scene.add(axesHelper);
+
+let renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 renderer.setSize(width, height);
 
 document.getElementById("dCanvas").appendChild(renderer.domElement);
@@ -49,19 +53,19 @@ let directionalLight = new THREE.DirectionalLight(0xffffff, 1);
 directionalLight.position.set(0, 1, 0);
 scene.add(directionalLight);
 
-let light = new THREE.PointLight(0x4c4c4c, 20);
+let light = new THREE.PointLight(0x4c4c4c, 5);
 light.position.set(0, 300, 500);
 scene.add(light);
 
-let light2 = new THREE.PointLight(0x4c4c4c, 10);
+let light2 = new THREE.PointLight(0x4c4c4c, 5);
 light2.position.set(500, 100, 0);
 scene.add(light2);
 
-let light3 = new THREE.PointLight(0x4c4c4c, 10);
+let light3 = new THREE.PointLight(0x4c4c4c, 5);
 light3.position.set(0, 100, -500);
 scene.add(light3);
 
-let light4 = new THREE.PointLight(0x4c4c4c, 20);
+let light4 = new THREE.PointLight(0x4c4c4c, 1);
 light4.position.set(-500, 300, 500);
 scene.add(light4);
 
